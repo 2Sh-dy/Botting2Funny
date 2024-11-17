@@ -20,8 +20,8 @@ for _,v in pairs(whitelist) do
                 elseif msg[1] == px.."orbit" then
                     task.spawn(function()
                     local origin = p.Character.HumanoidRootPart
-                    local r = 10;
-                    local rps = msg[2]; 
+                    local r = msg[3] or 10;
+                    local rps = msg[2] or math.pi;
                     local orbiter = localplayer.Character.HumanoidRootPart
 
                     local angle = 0;
