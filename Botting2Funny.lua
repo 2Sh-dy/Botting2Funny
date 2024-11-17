@@ -21,7 +21,7 @@ for _,v in pairs(whitelist) do
                     task.spawn(function()
                     local origin = p.Character.HumanoidRootPart
                     local r = 10;
-                    local rps = math.pi; 
+                    local rps = msg[2]; 
                     local orbiter = localplayer.Character.HumanoidRootPart
 
                     local angle = 0;
