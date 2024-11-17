@@ -19,7 +19,7 @@ local function cmd(p)
             local r = msg[3] or 10
                local rps = math.pi
             local orbiter = localplayer.Character.HumanoidRootPart
-
+ 
             local angle = 0;
             orbit = game:GetService'RunService'.Heartbeat:Connect(function(dt)
                 angle = (angle + (dt/5)*((msg[2] or 10)/5) * rps) % (2 * math.pi);
