@@ -6,13 +6,6 @@ local px = "."
 local players = game:GetService("Players")
 local localplayer = players.LocalPlayer
 local orbit
-for _,v in pairs(whitelist) do
-    for _,p in pairs(players:GetPlayers()) do
-        if string.lower(p.Name) == string.lower(v) then
-            cmd(p)
-        end
-    end
-end
 local function cmd(p)
     p.Chatted:Connect(function(msg)
         msg = string.split(string.lower(msg), " ")
@@ -37,4 +30,11 @@ local function cmd(p)
             orbit:Disconnect()
         end
     end)
+end
+for _,v in pairs(whitelist) do
+    for _,p in pairs(players:GetPlayers()) do
+        if string.lower(p.Name) == string.lower(v) then
+            cmd(p)
+        end
+    end
 end
