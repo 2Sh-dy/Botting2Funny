@@ -1,6 +1,7 @@
 local whitelist = {
   "falllostgravity",
-  "bigbubbly_noob"
+  "bigbubbly_noob",
+  "mrtopskyp"
 }
 local px = "."
 local players = game:GetService("Players")
