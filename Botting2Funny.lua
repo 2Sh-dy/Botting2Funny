@@ -23,7 +23,7 @@ local function cmd(p)
             local angle = 0;
             orbit = game:GetService'RunService'.Heartbeat:Connect(function(dt)
                 angle = (angle + (dt/5)*((msg[2] or 10)/5) * rps) % (2 * math.pi);
-                orbiter.CFrame = origin.CFrame * CFrame.new(math.cos(angle) * r, 0, math.sin(angle) * r); 
+                orbiter.CFrame = CFrame.new(origin.Position) * CFrame.new(math.cos(angle) * r, 0, math.sin(angle) * r); 
             end)
             end)
         elseif msg[1] == px.."unorbit" then
