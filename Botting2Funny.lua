@@ -20,13 +20,13 @@ for _,v in pairs(whitelist) do
                 elseif msg[1] == px.."orbit" then
                     task.spawn(function()
                     local origin = p.Character.HumanoidRootPart
-                    local r = msg[3] or 10;
-                    local rps = msg[2] or math.pi;
+                    local r = msg[3] or 10
+                    local rps = math.pi
                     local orbiter = localplayer.Character.HumanoidRootPart
 
                     local angle = 0;
                     orbit = game:GetService'RunService'.Heartbeat:Connect(function(dt)
-                    	angle = (angle + dt * rps) % (2 * math.pi);
+                    	angle = (angle + (dt/5)*(msg[2]/5) * rps) % (2 * math.pi);
                     	orbiter.CFrame = origin.CFrame * CFrame.new(math.cos(angle) * r, 0, math.sin(angle) * r); 
                     end)
                     end)
