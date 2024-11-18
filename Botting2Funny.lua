@@ -1,4 +1,8 @@
+
 --[[
+--update log
+added .bounce (VERY, VERY BUGGY)
+
 --prefixes
 #plr -- targets plr, can be shortened
 all -- targets every player
@@ -42,7 +46,7 @@ local localplayer = players.LocalPlayer
 local orbit
 local function cmd(p)
     p.Chatted:Connect(function(msg)
-        msg = string.split(string.lower(msg), " ")
+        msg = string.split(msg, " ")
         if msg[1] == px.."leave" then
             players.LocalPlayer:Kick()
         elseif msg[1] == px.."bring" then
@@ -62,6 +66,22 @@ local function cmd(p)
             end)
         elseif msg[1] == px.."unorbit" then
             orbit:Disconnect()
+        elseif msg[1] == px.."test" then
+local hrp = localplayer.Character.HumanoidRootPart
+local user = msg[2]
+print(game.Players[user])
+for i=1,10 do
+hrp.CFrame=players[user].Character.HumanoidRootPart.CFrame*CFrame.new(0,-3.5,0)
+hrp.AssemblyLinearVelocity=Vector3.new(0,9e9,0)
+task.wait()
+end
+for i=1,10 do
+hrp.CFrame=players[user].Character.HumanoidRootPart.CFrame*CFrame.new(0,2,0)
+hrp.AssemblyLinearVelocity=Vector3.new(0,9e9,0)
+task.wait()
+end
+hrp.AssemblyLinearVelocity=Vector3.new(0,0,0)
+hrp.CFrame=opos
         end
     end)
 end
